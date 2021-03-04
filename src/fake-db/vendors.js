@@ -1,7 +1,14 @@
-export const vendors = [
+import React from 'react';
+
+import { ReactComponent as BoxIcon } from '../icons/box-icon.svg';
+import { ReactComponent as DropboxIcon } from '../icons/dropbox-icon.svg';
+import { ReactComponent as GoogleDriveIcon } from '../icons/google-drive-icon.svg';
+import { ReactComponent as GoogleIcon } from '../icons/google-icon.svg';
+
+export const dummyVendors = [
   {
     vendorName: 'Box',
-    vendorIcon: '',
+    vendorIcon: <BoxIcon />,
     overallScore: {
       label: 'Overall Score',
       value: 6,
@@ -85,7 +92,7 @@ export const vendors = [
   },
   {
     vendorName: 'Dropbox',
-    vendorIcon: '',
+    vendorIcon: <DropboxIcon />,
     overallScore: {
       label: 'Overall Score',
       value: 6.1,
@@ -169,7 +176,7 @@ export const vendors = [
   },
   {
     vendorName: 'Google Drive',
-    vendorIcon: '',
+    vendorIcon: <GoogleDriveIcon />,
     overallScore: {
       label: 'Overall Score',
       value: 4.5,
@@ -253,7 +260,7 @@ export const vendors = [
   },
   {
     vendorName: 'Sales Force',
-    vendorIcon: '',
+    vendorIcon: <GoogleIcon />,
     overallScore: {
       label: 'Overall Score',
       value: 6.2,
