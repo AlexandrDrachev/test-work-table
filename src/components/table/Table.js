@@ -241,7 +241,7 @@ const RenderTable = ({ vendors, loading }) => {
             setFindingHistoryPropsActive,
             setShowFindingHistoryRow,
             setFindingHistoryPropsActive)}
-          {findingHistoryPropsActive && showFindingHistoryRow &&renderItemProps('findingHistoryProps', 'Founders', 'gray-900')}
+          {findingHistoryPropsActive && showFindingHistoryRow && renderItemProps('findingHistoryProps', 'Founders', 'gray-900')}
           {findingHistoryPropsActive && showFindingHistoryRow && renderItemProps('findingHistoryProps', 'Key Investors')}
           {findingHistoryPropsActive && showFindingHistoryRow && renderItemProps('findingHistoryProps', 'founded', 'gray-900')}
 
