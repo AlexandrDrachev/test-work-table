@@ -1,21 +1,14 @@
-import { all, take, put } from 'redux-saga/effects';
+import { all } from 'redux-saga/effects';
 
-import { testRootReducerSaga } from './rootReducer';
-import { getVendorsWatcher } from "../components/app/store/appSaga";
+import { getVendorsWatcher } from '../components/app/store/appSaga';
+import { addNewVendorWatcher, removeVendorWatcher } from '../components/table/store/tableSaga';
 
 function* rootSaga() {
   yield all([
-    testRootSaga(),
     getVendorsWatcher(),
+    addNewVendorWatcher(),
+    removeVendorWatcher(),
   ]);
-}
-
-function* testRootSaga() {
-  yield console.log(`rootSaga is work!`);
-  while (true) {
-    const { payload } = yield take('TEST_ROOT_REDUCER_ACTION');
-    yield put(testRootReducerSaga(payload));
-  }
 }
 
 export default rootSaga;

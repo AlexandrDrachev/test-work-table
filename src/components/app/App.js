@@ -4,18 +4,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
 
 import routes from '../../configs/routes';
-import { testRootReducerAction } from '../../store/rootReducer';
 import { getVendorsAction } from './store/appActions';
 import Spinner from '../spinner';
-import Home from '../home';
+import Header from '../header';
 
 const App = () => {
 
   const dispatch = useDispatch();
-  // const testString = useSelector((state) => state.appState.testRootReducer);
   const appState = useSelector((state) => state.appState);
-  const { testRootReducer, loading } = appState;
-  const testActionWork = (val) => dispatch(testRootReducerAction(val));
+  const { loading } = appState;
 
   useEffect(() => {
     !appState.vendors && dispatch(getVendorsAction());
@@ -27,10 +24,10 @@ const App = () => {
 
   return (
     <div
-      onClick={() => testActionWork('new value in testRootReducer field')}
-      className="container mx-auto text-red-600"
+      className="container mx-auto text-purple-700"
     >
       <div>
+        <Header />
         <Switch>
           {
             routes.map((route, idx) => {

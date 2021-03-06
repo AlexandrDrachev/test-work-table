@@ -4,7 +4,9 @@ export default class ServiceApi {
 
   getVendors = () => {
     return new Promise((resolve) => {
-      resolve(dummyVendors);
+      setTimeout(() => {
+        resolve(dummyVendors);
+      }, 2000);
     })
       .then((res) => res);
   };

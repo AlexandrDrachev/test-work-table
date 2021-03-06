@@ -1,4 +1,4 @@
-import { take, call, put, delay } from 'redux-saga/effects';
+import { take, call, put } from 'redux-saga/effects';
 import ServiceApi from '../../../services/serviceApi';
 import { onChangeAppLoadingAction, getVendorsSaga } from './appActions';
 
@@ -14,7 +14,6 @@ export function* getVendorsWatcher() {
 
 function* getVendorsWorker() {
   yield put(onChangeAppLoadingAction(true));
-  yield delay(2000);
   const vendors = yield call(getVendors);
   const vendorsEntity = vendors.reduce((acc, currentV, idx) => {
 
@@ -35,6 +34,8 @@ function* getVendorsWorker() {
 
     const vendor = {
       ...currentV,
+      loaded: false,
+      id: idx,
       companyInfoProps: newCompanyInfoProps,
       customerCaseStudiesProps: newCustomerCaseStudiesProps,
       featuresProps: newFeaturesProps,

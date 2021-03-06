@@ -1,29 +1,18 @@
 import { initialAppState, appReducer } from '../components/app/store/appReducer';
+import { initialTableState, tableReducer } from '../components/table/store/tableReducer';
 
 const initialState = {
   appState: initialAppState,
+  tableState: initialTableState,
 };
 
 const rootReducer = (state = initialState, action) => {
-  console.log('state: ', state);
-  console.log('action: ', action.type);
-  const { appState } = state;
+
+  const { appState, tableState } = state;
+
   return {
     appState: appReducer(appState, action),
-  };
-};
-
-export const testRootReducerAction = (value) => {
-  return {
-    type: 'TEST_ROOT_REDUCER_ACTION',
-    payload: value,
-  };
-};
-
-export const testRootReducerSaga = (value) => {
-  return {
-    type: 'TEST_ROOT_REDUCER_SAGA',
-    payload: value,
+    tableState: tableReducer(tableState, action),
   };
 };
 
