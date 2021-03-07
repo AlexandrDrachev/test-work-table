@@ -1,3 +1,3 @@
-import AddNewWendor from './AddNewWendor';
+import AddNewWendor from './AddNewVendor';
 
 export default AddNewWendor;

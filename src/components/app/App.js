@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { Route, Switch } from 'react-router-dom';
@@ -13,12 +13,17 @@ const App = () => {
   const dispatch = useDispatch();
   const appState = useSelector((state) => state.appState);
   const { loading } = appState;
+  const [ spin, setSpin ] = useState(false);
 
   useEffect(() => {
     !appState.vendors && dispatch(getVendorsAction());
   }, [appState.vendors, dispatch]);
 
-  if (loading) {
+  useEffect(() => {
+    setSpin(loading);
+  }, [loading]);
+
+  if (spin) {
     return <Spinner />;
   }
 

@@ -1,6 +1,6 @@
 import Table from './Table';
 
-const tablePath = '/';
+const tablePath = '/table';
 
 const TableConfig = {
   path: tablePath,

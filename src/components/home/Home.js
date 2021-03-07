@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { vendorCards } from '../add-new-vendor/AddNewWendor';
+import { vendorCards } from '../add-new-vendor/AddNewVendor';
 
 const Home = () => {
 
